@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+
+<h2 style="color: coral;"> Completa los siguientes datos para registrarte: </h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div align="center">
+        <h6 style="color: rgb(241, 245, 242); text-align: center;">{{ formulario_registro.as_p }}</h6>
+    </div>
+
+    
+    <button type="" class="btn btn-primary btn-xs">Registrarme</button>
+
+</form>
+</div>
+{% endblock %}

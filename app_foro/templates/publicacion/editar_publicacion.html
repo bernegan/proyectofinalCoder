@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+<h3 style="color: rgb(255, 255, 255);"> Complete el siguiente formulario. Una vez enviado con todos los datos correctamente se aplicaran los cambios. </h3>
+
+<form action="{% url 'editar_publicacion' Publicacion.id %}" method="POST">
+    {% csrf_token %}
+
+    <h3 style="color:coral">Usuario:</h3><input type="text" name="usuario" >
+    <h3 style="color:coral">Tema Especifico:</h3><input type="text" name="tema_especifico">
+    <h3 style="color:coral"  >Publica tu consulta:</h3><textarea name="consulta" id="" cols="30" rows="5"></textarea>
+    <button type="submit" class="btn btn-primary btn-xs">Aplicar cambios</button>
+
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+<div style="text-align: center;">
+    {% if Publicacion %}
+        <h2 style="background-color:coral ; border-radius: 18px; color: rgb(0, 0, 0);">{{Publicacion.consulta}}</h2>
+    {% endif %}
+    
+    <form action='formulario_comentario' method="POST">
+        {% csrf_token %}
+       
+
+        
+        <h3 style="color:rgb(255, 255, 255) ; background-color: green; border-radius: 18px; padding-left: 5px; padding-right: 5px; " >Escribe tu respuesta:</h3><textarea name="respuesta" id="" cols="30" rows="5"></textarea>
+        
+        <div style="text-align: center;">
+            
+        
+    
+       
+        <button type="submit" class="btn btn-primary btn-xs">Enviar</button>
+        
+    
+        
+    </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+
+
+<form>
+    
+    <a href="home">
+        <button type="button" class="btn btn-primary btn-xs" style="margin-right: 100px;"> Home </button>
+    </a>
+    <a href="busqueda">
+        <button type="button" class="btn btn-primary btn-xs" style="margin-right: 50px;"> Busqueda </button>
+    </a>
+    <a href="contacto">
+        <button type="button" class="btn btn-primary btn-xs" style="margin-left: 50px;"> Contacto </button>
+    </a>
+    <a href="publicacion">
+        <button type="button" class="btn btn-primary btn-xs" style="margin-left: 100px;"> Publicar algo </button>
+    </a>
+    
+</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+<div style="text-align: center;">
+<h2 style="color:rgb(255, 255, 255) ; background-color: green; border-radius: 18px; padding-left: 5px; padding-right: 5px;"> Realizar publicacion: </h2>
+
+<form action="formulario_publicacion" method="POST">
+    {% csrf_token %}
+
+    <h3 style="color:coral">Usuario:</h3><input type="text" name="usuario" >
+    <h3 style="color:coral">Tema Especifico:</h3><input type="text" name="tema_especifico">
+    <h3 style="color:coral"  >Publica tu consulta:</h3><textarea name="consulta" id="" cols="30" rows="5"></textarea>
+    
+    <div style="text-align: center;">
+        
+    
+
+    
+    <button type="submit" class="btn btn-primary btn-xs">Publicar</button>
+
+    
+</form>
+</div>
+{% endblock %}

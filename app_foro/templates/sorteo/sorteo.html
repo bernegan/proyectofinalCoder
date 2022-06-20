@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+<h5 style="color: white;"> Con el proposito de festejar el estreno de nuestra pagina estaremos sorteando un mes de suscripcion premium. Llena los datos en el siguiente formulario para anotarte!: </h5>
+
+    <form action="formulario_sorteo" method="POST">
+        {% csrf_token %}
+
+        <h3 style="color: coral;">Nombre:</h3><input type="text" name="nombre">
+        <h3 style="color: coral;">Apellido:</h3><input type="text" name="apellido">
+       <h3 style="color: coral;">Email:</h3><input type="text" name="email">
+        <h3 style="color: coral;">Telefono:</h3><input type="text" name="telefono">
+        <button type="submit" class="btn btn-primary btn-xs" > Anotarme </button>
+
+    </form>
+
+{% endblock %}

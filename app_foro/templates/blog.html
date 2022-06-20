@@ -1,0 +1,51 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+{% block contenidotabla %}
+<style>
+    table , th , td{
+        border: 4px solid #ffffff;
+        
+    }
+</style>
+
+{% endblock %}
+
+
+{% block contenido %}
+    <h1 style="color:rgb(255, 255, 255) ; background-color: green; border-radius: 18px; padding-left: 5px; padding-right: 5px; margin-left: 20%;">POSTEOS</h1>
+
+    {% if datos %}
+        <table width="130%">
+            <tr style="color: coral;">
+                 <th></th>
+                 <th>Publicacion Nro</th>
+                 <th>Usuario</th>
+                 <th>Tema especifico</th>
+                 <th>Consulta</th>
+                 <th>Fecha de publicacion</th>
+        
+          </tr>
+                  
+        {% for i in datos %}
+             <tr style="color:#ffffff;" >
+                 <td><a href="{% url 'vista_publicacion' i.id %}"><button class="btn btn-primary btn-xs">VER</button></td></a>
+                 <td>{{i.id}}</td>
+                 <td>{{i.usuario}}</td>
+                 <td>{{i.tema_especifico}}</td>
+                 <td>{{i.consulta}}</td>
+                 <td>{{i.fecha_de_publicacion}}</td>
+                 <td><a href="{% url 'responder_publicacion' i.id %}""><button class="btn btn-primary btn-xs">RESPONDER</button></td></a>
+                 <td><a href="{% url 'borrar_publicacion' i.id %}""><button class="btn btn-primary btn-xs">BORRAR</button></td></a>
+                 <td><a href="{% url 'editar_publicacion' i.id %}"><button class="btn btn-primary btn-xs">EDITAR</button></td></a>
+            </tr>
+        {% endfor %}
+
+        </table>
+
+
+
+    {% endif %}
+
+{% endblock %}

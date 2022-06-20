@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+
+<h2 style="color: rgb(255, 255, 255);"> LOGIN: </h2>
+<form action="" method="POST" style="padding-bottom: 300px;">
+    {% csrf_token %}
+    <div align="center">
+        <h2 style="color: coral;">{{ form.as_p }}</h2>
+    </div>
+    <button type="" class="btn btn-primary btn-xs">Ingresar</button>
+    <hr class="divider" />
+    
+
+</form>
+<h2 style="color: white">No estas registrado?</h2>
+<a href="registro">
+    <button type="" class="btn btn-primary btn-xs">Registrate Aqui</button>
+</a>
+
+    
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+<h2 style="color:rgb(255, 255, 255) ; background-color: green; border-radius: 18px; padding-left: 5px; padding-right: 5px; "> Buscador: </h2>
+
+<form action="formulario_buscador" method="FORM">
+    {% csrf_token %}
+
+    <input type="text" name="texto">
+    <button type="submit"  class="btn btn-primary btn-xs"> Buscar </button>
+
+
+
+</form>
+
+{% endblock %}
